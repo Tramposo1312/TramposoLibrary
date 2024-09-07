@@ -1,32 +1,46 @@
-# Prerequisites
-*.d
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.sln.docstates
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+
+# C++ compiled files
 *.obj
+*.exe
+*.dll
+*.lib
+*.pdb
 
 # Precompiled Headers
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# Logs and databases
+*.log
+*.tlog
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
