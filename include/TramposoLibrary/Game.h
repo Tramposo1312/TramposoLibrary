@@ -3,12 +3,12 @@
 
 #include <SDL.h>
 #include <string>
-#include <vector>
 #include <memory>
+#include <unordered_map>
+#include "TramposoLibrary/Scene.h"
 
 namespace TramposoLibrary {
 
-    class Sprite;
     class InputManager;
     class AudioManager;
     class CollisionManager;
@@ -21,7 +21,10 @@ namespace TramposoLibrary {
         void run();
         void quit();
 
-        void addSprite(std::shared_ptr<Sprite> sprite);
+        void addScene(const std::string& name, std::unique_ptr<Scene> scene);
+        void setCurrentScene(const std::string& name);
+
+        SDL_Renderer* getRenderer() const;
         InputManager& getInputManager() {
             return *m_inputManager;
         }
@@ -32,23 +35,27 @@ namespace TramposoLibrary {
             return *m_collisionManager;
         }
 
+        bool isRunning() const;
+
     private:
         SDL_Window* m_window;
         SDL_Renderer* m_renderer;
         bool m_isRunning;
 
-        std::vector<std::shared_ptr<Sprite>> m_sprites;
         std::unique_ptr<InputManager> m_inputManager;
         std::unique_ptr<AudioManager> m_audioManager;
         std::unique_ptr<CollisionManager> m_collisionManager;
 
-        void initialize();
+        std::unordered_map<std::string, std::unique_ptr<Scene>> m_scenes;
+        Scene* m_currentScene;
+
+        Uint32 m_lastFrameTime;
+
         void handleEvents();
-        void update();
+        void update(float deltaTime);
         void render();
-        void clean();
     };
 
-} 
+} // TramposoLibrary
 
 #endif // TRAMPOSO_GAME_H

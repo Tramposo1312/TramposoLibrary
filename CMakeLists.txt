@@ -10,14 +10,19 @@ find_package(SDL2_image CONFIG REQUIRED)
 find_package(SDL2_ttf CONFIG REQUIRED)
 find_package(SDL2_mixer CONFIG REQUIRED)
 
-# Add library
-add_library(TramposoLibrary
+# Specify source files
+set(SOURCES
     src/Game.cpp
     src/Sprite.cpp
     src/InputManager.cpp
     src/AudioManager.cpp
     src/CollisionManager.cpp
+    src/Scene.cpp
+    src/PhysicsComponent.cpp
 )
+
+# Add library
+add_library(TramposoLibrary ${SOURCES})
 
 # Set include directories for the library
 target_include_directories(TramposoLibrary PUBLIC
@@ -25,7 +30,7 @@ target_include_directories(TramposoLibrary PUBLIC
     $<INSTALL_INTERFACE:include>
 )
 
-# Link libraries to TramposoLibrary
+# Link libraries
 target_link_libraries(TramposoLibrary
     PUBLIC
     SDL2::SDL2 SDL2::SDL2main
@@ -47,8 +52,16 @@ FetchContent_MakeAvailable(googletest)
 # Enable testing
 enable_testing()
 
+# Specify test source files
+set(TEST_SOURCES
+    tests/GameTests.cpp
+    tests/SpriteTests.cpp
+    tests/SceneTests.cpp
+    tests/ComponentTests.cpp
+)
+
 # Add test executable
-add_executable(tramposo_tests tests/GameTests.cpp)
+add_executable(tramposo_tests ${TEST_SOURCES})
 target_link_libraries(tramposo_tests
     PRIVATE
     TramposoLibrary
@@ -57,3 +70,6 @@ target_link_libraries(tramposo_tests
 
 # Add the test
 add_test(NAME TramposoTests COMMAND tramposo_tests)
+
+# Set CMP0135 to NEW to avoid the warning
+cmake_policy(SET CMP0135 NEW)
