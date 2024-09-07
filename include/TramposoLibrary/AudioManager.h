@@ -3,7 +3,7 @@
 
 #include <SDL_mixer.h>
 #include <string>
-#include <vector>
+#include <unordered_map>
 
 namespace TramposoLibrary {
 
@@ -12,15 +12,20 @@ namespace TramposoLibrary {
         AudioManager();
         ~AudioManager();
 
-        void playSound(const std::string& soundFile);
-        void playMusic(const std::string& musicFile, int loops = -1);
+        void loadSound(const std::string& name, const std::string& filename);
+        void playSound(const std::string& name);
+
+        void loadMusic(const std::string& filename);
+        void playMusic();
+        void pauseMusic();
+        void resumeMusic();
         void stopMusic();
 
     private:
-        std::vector<Mix_Chunk*> m_soundEffects;
+        std::unordered_map<std::string, Mix_Chunk*> m_soundEffects;
         Mix_Music* m_music;
     };
 
-} 
+} // TramposoLibrary
 
 #endif // TRAMPOSO_AUDIO_MANAGER_H
