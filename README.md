@@ -23,7 +23,7 @@ To build TramposoLibrary, follow these steps:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/TramposoLibrary.git
+   git clone https://github.com/Tramposo1312/TramposoLibrary.git
    cd TramposoLibrary
    ```
 
