@@ -1,7 +1,7 @@
-#include "tramplib.h"
+#include "TramposoLibrary/InputManager.h"
 #include <cstring>
 
-namespace tramplib {
+namespace TramposoLibrary {
 
     InputManager::InputManager() : m_keyboardState(SDL_GetKeyboardState(nullptr)) {
         memset(m_previousKeyboardState, 0, sizeof(m_previousKeyboardState));
@@ -20,4 +20,4 @@ namespace tramplib {
         return !m_keyboardState[key] && m_previousKeyboardState[key];
     }
 
-} 
+} // TramposoLibrary

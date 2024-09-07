@@ -1,24 +1,11 @@
-#include "tramplib.h"
-#include <stdexcept>
+#include "TramposoLibrary/Sprite.h"
 
-namespace tramplib {
+namespace TramposoLibrary {
 
     Sprite::Sprite(SDL_Renderer* renderer, const std::string& imagePath, int x, int y)
         : m_renderer(renderer), m_texture(nullptr) {
-        SDL_Surface* surface = IMG_Load(imagePath.c_str());
-        if (!surface) {
-            throw std::runtime_error("Failed to load image: " + std::string(IMG_GetError()));
-        }
-
-        m_texture = SDL_CreateTextureFromSurface(renderer, surface);
-        SDL_FreeSurface(surface);
-
-        if (!m_texture) {
-            throw std::runtime_error("Failed to create texture: " + std::string(SDL_GetError()));
-        }
-
-        SDL_QueryTexture(m_texture, nullptr, nullptr, &m_rect.w, &m_rect.h);
-        setPosition(x, y);
+        // TODO: Implement sprite loading
+        m_rect = { x, y, 0, 0 };
     }
 
     Sprite::~Sprite() {
@@ -28,11 +15,11 @@ namespace tramplib {
     }
 
     void Sprite::update() {
-        // Default update behavior (can be overridden in derived classes) //
+        // TODO: Implement sprite update logic
     }
 
     void Sprite::render() {
-        SDL_RenderCopy(m_renderer, m_texture, nullptr, &m_rect);
+        // TODO: Implement sprite rendering
     }
 
     void Sprite::setPosition(int x, int y) {
@@ -40,4 +27,4 @@ namespace tramplib {
         m_rect.y = y;
     }
 
-} 
+} // TramposoLibrary

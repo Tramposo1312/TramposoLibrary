@@ -1,8 +1,11 @@
-#include "tramplib.h"
+#include "TramposoLibrary/Game.h"
+#include "TramposoLibrary/Sprite.h"
+#include "TramposoLibrary/InputManager.h"
+#include "TramposoLibrary/AudioManager.h"
+#include "TramposoLibrary/CollisionManager.h"
 #include <stdexcept>
-#include <iostream>
 
-namespace tramplib {
+namespace TramposoLibrary {
 
     Game::Game(const std::string& title, int width, int height)
         : m_window(nullptr), m_renderer(nullptr), m_isRunning(false) {
@@ -30,18 +33,6 @@ namespace tramplib {
         if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
             throw std::runtime_error("SDL initialization failed: " + std::string(SDL_GetError()));
         }
-
-        if (IMG_Init(IMG_INIT_PNG) == 0) {
-            throw std::runtime_error("SDL_image initialization failed: " + std::string(IMG_GetError()));
-        }
-
-        if (TTF_Init() == -1) {
-            throw std::runtime_error("SDL_ttf initialization failed: " + std::string(TTF_GetError()));
-        }
-
-        if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
-            throw std::runtime_error("SDL_mixer initialization failed: " + std::string(Mix_GetError()));
-        }
     }
 
     void Game::run() {
@@ -67,7 +58,6 @@ namespace tramplib {
         for (auto& sprite : m_sprites) {
             sprite->update();
         }
-        // game logic here //
     }
 
     void Game::render() {
@@ -93,10 +83,7 @@ namespace tramplib {
         m_sprites.clear();
         SDL_DestroyRenderer(m_renderer);
         SDL_DestroyWindow(m_window);
-        Mix_Quit();
-        TTF_Quit();
-        IMG_Quit();
         SDL_Quit();
     }
 
-} 
+} // TramposoLibrary

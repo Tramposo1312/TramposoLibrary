@@ -4,13 +4,13 @@ project(TramposoLibrary VERSION 0.1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Find required packages
 find_package(SDL2 CONFIG REQUIRED)
 find_package(SDL2_image CONFIG REQUIRED)
 find_package(SDL2_ttf CONFIG REQUIRED)
 find_package(SDL2_mixer CONFIG REQUIRED)
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-
+# Add library
 add_library(TramposoLibrary
     src/Game.cpp
     src/Sprite.cpp
@@ -19,34 +19,41 @@ add_library(TramposoLibrary
     src/CollisionManager.cpp
 )
 
+# Set include directories for the library
+target_include_directories(TramposoLibrary PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+
+# Link libraries to TramposoLibrary
 target_link_libraries(TramposoLibrary
-    PRIVATE
+    PUBLIC
     SDL2::SDL2 SDL2::SDL2main
     SDL2_image::SDL2_image
     SDL2_ttf::SDL2_ttf
     SDL2_mixer::SDL2_mixer
 )
 
-install(TARGETS TramposoLibrary
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-    RUNTIME DESTINATION bin
+# Google Test
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
 )
-install(DIRECTORY include/ DESTINATION include)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
 
-# Add examples subdirectory
-# Uncomment the following line when you're ready to add examples
-# add_subdirectory(examples)
-
+# Enable testing
 enable_testing()
-# Uncomment the following line when you're ready to add tests
-# add_subdirectory(tests)
 
-# Add an executable for testing SDL2 setup
-add_executable(sdl_test src/sdl_test.cpp)
-target_link_libraries(sdl_test PRIVATE
-    SDL2::SDL2 SDL2::SDL2main
-    SDL2_image::SDL2_image
-    SDL2_ttf::SDL2_ttf
-    SDL2_mixer::SDL2_mixer
+# Add test executable
+add_executable(tramposo_tests tests/GameTests.cpp)
+target_link_libraries(tramposo_tests
+    PRIVATE
+    TramposoLibrary
+    gtest_main
 )
+
+# Add the test
+add_test(NAME TramposoTests COMMAND tramposo_tests)

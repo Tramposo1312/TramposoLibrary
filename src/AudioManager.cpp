@@ -1,9 +1,10 @@
-#include "tramplib.h"
-#include <stdexcept>
+#include "TramposoLibrary/AudioManager.h"
 
-namespace tramplib {
+namespace TramposoLibrary {
 
-    AudioManager::AudioManager() : m_music(nullptr) {}
+    AudioManager::AudioManager() : m_music(nullptr) {
+        // TODO: Initialize audio system
+    }
 
     AudioManager::~AudioManager() {
         stopMusic();
@@ -13,21 +14,11 @@ namespace tramplib {
     }
 
     void AudioManager::playSound(const std::string& soundFile) {
-        Mix_Chunk* chunk = Mix_LoadWAV(soundFile.c_str());
-        if (!chunk) {
-            throw std::runtime_error("Failed to load sound effect: " + std::string(Mix_GetError()));
-        }
-        m_soundEffects.push_back(chunk);
-        Mix_PlayChannel(-1, chunk, 0);
+        // TODO: Implement sound playing
     }
 
     void AudioManager::playMusic(const std::string& musicFile, int loops) {
-        stopMusic();
-        m_music = Mix_LoadMUS(musicFile.c_str());
-        if (!m_music) {
-            throw std::runtime_error("Failed to load music: " + std::string(Mix_GetError()));
-        }
-        Mix_PlayMusic(m_music, loops);
+        // TODO: Implement music playing
     }
 
     void AudioManager::stopMusic() {
@@ -38,4 +29,4 @@ namespace tramplib {
         }
     }
 
-} 
+} // TramposoLibrary
