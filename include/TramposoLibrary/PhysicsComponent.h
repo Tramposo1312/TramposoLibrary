@@ -1,8 +1,7 @@
 #ifndef TRAMPOSO_PHYSICS_COMPONENT_H
 #define TRAMPOSO_PHYSICS_COMPONENT_H
 
-<<<<<<< HEAD
-#include "Component.h"
+#include "TramposoLibrary/Component.h"
 
 namespace TramposoLibrary {
 
@@ -13,18 +12,6 @@ namespace TramposoLibrary {
         PhysicsComponent(Sprite* owner);
         void update(float deltaTime) override;
         void render() override {}  // Physics component doesn't render anything
-=======
-#include "TramposoLibrary/Component.h"
-
-namespace TramposoLibrary {
-
-    class PhysicsComponent : public Component {
-    public:
-        PhysicsComponent(Sprite* owner);
-
-        void update(float deltaTime) override;
-        void render() override {} // Physics component doesn't render anything
->>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
 
         void setVelocity(float x, float y) {
             m_velocityX = x; m_velocityY = y;
@@ -38,12 +25,6 @@ namespace TramposoLibrary {
         float m_accelerationX = 0.0f, m_accelerationY = 0.0f;
     };
 
-<<<<<<< HEAD
 } 
 
-#endif
-=======
-} // TramposoLibrary
-
-#endif // TRAMPOSO_PHYSICS_COMPONENT_H
->>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
+#endif 

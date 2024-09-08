@@ -1,9 +1,10 @@
 #include "TramposoLibrary/Game.h"
 #include "TramposoLibrary/InputManager.h"
-#include "TramposoLibrary/AudioManager.h"
+#include "TramposoLibrary/ResourceManager.h"
 #include "TramposoLibrary/CollisionManager.h"
 #include <stdexcept>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
 
 namespace TramposoLibrary {
 
@@ -12,9 +13,11 @@ namespace TramposoLibrary {
         if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
             throw std::runtime_error("SDL could not initialize! SDL_Error: " + std::string(SDL_GetError()));
         }
-
         if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
             throw std::runtime_error("SDL_image could not initialize! SDL_image Error: " + std::string(IMG_GetError()));
+        }
+        if (TTF_Init() == -1) {
+            throw std::runtime_error("SDL_ttf could not initialize! SDL_ttf Error: " + std::string(TTF_GetError()));
         }
 
         m_window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
@@ -28,13 +31,14 @@ namespace TramposoLibrary {
         }
 
         m_inputManager = std::make_unique<InputManager>();
-        m_audioManager = std::make_unique<AudioManager>();
+        m_resourceManager = std::make_unique<ResourceManager>();
         m_collisionManager = std::make_unique<CollisionManager>();
     }
 
     Game::~Game() {
         SDL_DestroyRenderer(m_renderer);
         SDL_DestroyWindow(m_window);
+        TTF_Quit();
         IMG_Quit();
         SDL_Quit();
     }
@@ -42,7 +46,6 @@ namespace TramposoLibrary {
     void Game::run() {
         m_isRunning = true;
         m_lastFrameTime = SDL_GetTicks();
-
         while (m_isRunning) {
             Uint32 currentTime = SDL_GetTicks();
             float deltaTime = (currentTime - m_lastFrameTime) / 1000.0f;
@@ -119,4 +122,4 @@ namespace TramposoLibrary {
         return m_isRunning;
     }
 
-} // TramposoLibrary
+} // namespace TramposoLibrary

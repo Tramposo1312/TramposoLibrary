@@ -53,16 +53,8 @@ namespace TramposoLibrary {
 
         scene.addSprite(sprite);
 
-<<<<<<< HEAD
         // TODO: Add a method to Scene to get the number of sprites
         // EXPECT_EQ(scene.getSpriteCount(), 1);
     }
 
-} // namespace TramposoLibrary
-=======
-        // You might want to add a method to Scene to get the number of sprites
-        // EXPECT_EQ(scene.getSpriteCount(), 1);
-    }
-
-} // TramposoLibrary
->>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
+} 

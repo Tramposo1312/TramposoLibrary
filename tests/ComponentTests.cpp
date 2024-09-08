@@ -6,25 +6,18 @@ namespace TramposoLibrary {
 
     class TestComponent : public Component {
     public:
-<<<<<<< HEAD
-        TestComponent(Sprite* owner) : Component(owner) {}
-=======
         TestComponent(Sprite* owner) : Component(owner), updated(false), rendered(false) {}
->>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
+
         void update(float deltaTime) override {
             updated = true;
         }
+
         void render() override {
             rendered = true;
         }
 
-<<<<<<< HEAD
-        bool updated = false;
-        bool rendered = false;
-=======
         bool updated;
         bool rendered;
->>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
     };
 
     TEST(ComponentTests, AddComponent) {
@@ -57,8 +50,4 @@ namespace TramposoLibrary {
         SDL_DestroyRenderer(renderer);
     }
 
-<<<<<<< HEAD
-} // TramposoLibrary
-=======
-} // namespace TramposoLibrary
->>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
+} 

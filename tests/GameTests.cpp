@@ -59,4 +59,4 @@ namespace TramposoLibrary {
         EXPECT_FALSE(game.isRunning());
     }
 
-} // TramposoLibrary
+} 
