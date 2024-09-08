@@ -72,12 +72,38 @@ namespace tramplib {
             m_inputManager->handleEvent(event);
         }
     }
+    void Game::pushState(std::unique_ptr<GameState> state) {
+        if (!m_states.empty()) {
+            m_states.top()->exit();
+        }
+        m_states.push(std::move(state));
+        m_states.top()->enter();
+    }
+
+    void Game::popState() {
+        if (!m_states.empty()) {
+            m_states.top()->exit();
+            m_states.pop();
+        }
+        if (!m_states.empty()) {
+            m_states.top()->enter();
+        }
+    }
+
+    void Game::changeState(std::unique_ptr<GameState> state) {
+        while (!m_states.empty()) {
+            m_states.top()->exit();
+            m_states.pop();
+        }
+        m_states.push(std::move(state));
+        m_states.top()->enter();
+    }
 
     void Game::update(float deltaTime) {
-        m_inputManager->update();
-        if (m_currentScene) {
-            m_currentScene->update(deltaTime);
+        if (!m_states.empty()) {
+            m_states.top()->update(deltaTime);
         }
+        m_inputManager->update();
         m_collisionManager->checkCollisions();
     }
 
@@ -85,13 +111,12 @@ namespace tramplib {
         SDL_SetRenderDrawColor(m_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear(m_renderer);
 
-        if (m_currentScene) {
-            m_currentScene->render();
+        if (!m_states.empty()) {
+            m_states.top()->render();
         }
 
         SDL_RenderPresent(m_renderer);
     }
-
     void Game::quit() {
         m_isRunning = false;
     }
