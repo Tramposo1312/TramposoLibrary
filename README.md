@@ -1,25 +1,25 @@
 # TramposoLibrary
 
-TramposoLibrary is a C++ library designed to simplify 2D game development. It provides a set of tools and abstractions to handle common game development tasks, allowing developers to focus on creating engaging gameplay experiences.
+TramposoLibrary is a C++ 2D game development library built on top of SDL2. It provides a set of classes and utilities to simplify game development.
 
 ## Features
 
-- Easy-to-use game loop management
-- Sprite rendering and manipulation
+- Game loop management
+- Scene-based game structure
+- Sprite rendering
 - Input handling
-- Audio playback for sound effects and music
-- Basic collision detection
+- Audio management
+- Collision detection
+- Basic physics components
 
-## Requirements
+## Prerequisites
 
 - C++17 compatible compiler
-- CMake (version 3.12 or higher)
+- CMake 3.12 or higher
 - vcpkg package manager
-- SDL2 and its extensions (SDL2_image, SDL2_ttf, SDL2_mixer)
+- SDL2, SDL2_image, SDL2_ttf, SDL2_mixer
 
-## Building
-
-To build TramposoLibrary, follow these steps:
+## Installation
 
 1. Clone the repository:
    ```
@@ -27,41 +27,55 @@ To build TramposoLibrary, follow these steps:
    cd TramposoLibrary
    ```
 
-2. Install the required packages using vcpkg:
+2. Install dependencies using vcpkg:
    ```
    vcpkg install sdl2:x64-windows sdl2-image:x64-windows sdl2-ttf:x64-windows sdl2-mixer:x64-windows
    ```
 
-3. Create a build directory and run CMake:
+3. Configure and build the project:
    ```
-   mkdir build
-   cd build
+   mkdir build && cd build
    cmake .. -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake
-   ```
-
-4. Build the project:
-   ```
-   cmake --build .
+   cmake --build . --config Release
    ```
 
 ## Usage
 
-Here's a simple example of how to use TramposoLibrary:
+Here's a basic example of how to use TramposoLibrary:
 
 ```cpp
 #include <TramposoLibrary/Game.h>
+#include <TramposoLibrary/Scene.h>
 
-int main(int argc, char* argv[]) {
+class MyScene : public TramposoLibrary::Scene {
+public:
+    MyScene(TramposoLibrary::Game* game) : Scene(game) {}
+    
+    void load() override {
+        // Load resources, create sprites, etc.
+    }
+    
+    void update(float deltaTime) override {
+        // Update game logic
+    }
+    
+    void render() override {
+        // Render sprites
+    }
+};
+
+int main() {
     TramposoLibrary::Game game("My Game", 800, 600);
-    
-    // Add game objects, load resources, etc.
-    
+    game.addScene("myScene", std::make_unique<MyScene>(&game));
+    game.setCurrentScene("myScene");
     game.run();
     return 0;
 }
 ```
 
-For more detailed examples, check the `examples` directory.
+## Documentation
+
+For detailed API documentation, please refer to the `docs` folder.
 
 ## Contributing
 
