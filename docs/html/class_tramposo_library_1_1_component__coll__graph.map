@@ -1,0 +1,23 @@
+<map id="TramposoLibrary::Component" name="TramposoLibrary::Component">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,139,191,272"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="127,389,295,475"/>
+<area shape="poly" id="edge7_Node000007_Node000001" title=" " alt="" coords="125,271,168,364,174,374,169,377,163,367,120,273"/>
+<area shape="rect" id="Node000002" href="$class_tramposo_library_1_1_sprite.html" title="Represents a game object that can be rendered to the screen." alt="" coords="283,704,435,923"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="282,781,239,756,195,724,154,686,122,641,103,598,89,552,79,505,74,458,74,367,81,289,86,289,79,367,80,457,85,504,94,551,108,596,127,639,158,683,198,720,242,751,285,776"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="311,555,408,624"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="362,624,362,687,357,687,357,624"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="432,555,505,624"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="460,625,436,681,432,690,427,688,432,679,455,623"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="529,555,637,624"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="554,625,499,682,449,730,446,726,495,678,550,622"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="136,539,287,640"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="235,639,256,679,276,707,271,710,252,681,230,641"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="214,474,214,522,209,522,209,474"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="219,171,348,240"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="237,252,220,274,208,297,203,320,201,344,204,390,199,390,195,344,197,319,204,295,216,271,232,249"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="326,5,347,75"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="329,75,302,155,297,154,323,73"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="337,296,443,365"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="348,74,363,138,386,279,381,280,358,139,343,75"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="369,380,332,446,284,516,263,540,259,537,280,513,327,443,365,377"/>
+</map>

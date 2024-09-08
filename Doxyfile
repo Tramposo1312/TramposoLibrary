@@ -1,0 +1,80 @@
+# Doxyfile for TramposoLibrary
+
+# Project information
+PROJECT_NAME           = "TramposoLibrary"
+PROJECT_NUMBER         = 1.0
+PROJECT_BRIEF          = "A C++ 2D game development library built on SDL2"
+OUTPUT_DIRECTORY       = docs
+
+# Input files
+INPUT                  = ./include ./src
+FILE_PATTERNS          = *.cpp *.h
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */build/* */tests/*
+
+# Output settings
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+
+# Extraction settings
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+# Build settings
+BUILTIN_STL_SUPPORT    = YES
+SORT_MEMBER_DOCS       = YES
+SORT_BRIEF_DOCS        = YES
+
+# Diagram settings
+HAVE_DOT               = YES
+CLASS_DIAGRAMS         = YES
+HIDE_UNDOC_RELATIONS   = NO
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+UML_LOOK               = YES
+UML_LIMIT_NUM_FIELDS   = 50
+TEMPLATE_RELATIONS     = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+
+# Miscellaneous settings
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 250
+GENERATE_TODOLIST      = YES
+GENERATE_TESTLIST      = YES
+GENERATE_BUGLIST       = YES
+GENERATE_DEPRECATEDLIST= YES
+
+# Source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES
+
+# Preprocessor settings
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+PREDEFINED             = DOXYGEN_SHOULD_SKIP_THIS
+
+# External references
+# TAGFILES               = 
+# GENERATE_TAGFILE       = TramposoLibrary.tag
+
+# Warnings
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES
+
+# Input filter (if any custom comments or markup)
+# INPUT_FILTER           = 
+
+# Example code
+EXAMPLE_PATH           = ./examples
+EXAMPLE_PATTERNS       = *.cpp
+EXAMPLE_RECURSIVE      = YES

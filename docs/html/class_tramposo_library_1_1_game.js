@@ -1,0 +1,26 @@
+var class_tramposo_library_1_1_game =
+[
+    [ "Game", "class_tramposo_library_1_1_game.html#a60852fa7a18f701eebfba56e908b8eb6", null ],
+    [ "~Game", "class_tramposo_library_1_1_game.html#a0139bfa0c6a123820a31fad2e52f6ba7", null ],
+    [ "addScene", "class_tramposo_library_1_1_game.html#a5cd4cf0612b26aaef5389cc43e88e5ba", null ],
+    [ "getAudioManager", "class_tramposo_library_1_1_game.html#ad1bb70e0907ef23455f3f8438f35131a", null ],
+    [ "getCollisionManager", "class_tramposo_library_1_1_game.html#afc09c96deade9e1efe201e9e3f45423d", null ],
+    [ "getInputManager", "class_tramposo_library_1_1_game.html#a8937160ff3ffff752692dfe0c79de5fd", null ],
+    [ "getRenderer", "class_tramposo_library_1_1_game.html#a5b8faa473ddb2c73b20b1e30f1e783c9", null ],
+    [ "handleEvents", "class_tramposo_library_1_1_game.html#a8d853e8eb65471a1a26761465f62ad96", null ],
+    [ "isRunning", "class_tramposo_library_1_1_game.html#a5ee85d298c9c6e3d29e198c787d4cd4a", null ],
+    [ "quit", "class_tramposo_library_1_1_game.html#a321b685d085882609e1edac1af662ced", null ],
+    [ "render", "class_tramposo_library_1_1_game.html#af29b3ed7d39e3c42685984ff298b03ac", null ],
+    [ "run", "class_tramposo_library_1_1_game.html#aa2b2d027665cdef9356b5f959333a31a", null ],
+    [ "setCurrentScene", "class_tramposo_library_1_1_game.html#a21aa2eb5632c5731d102e2129079f4a6", null ],
+    [ "update", "class_tramposo_library_1_1_game.html#ac0d0ce55e1054a28b84c2bf6a7c6103e", null ],
+    [ "m_audioManager", "class_tramposo_library_1_1_game.html#af2d494b3777a1894ec89849b0b8aac65", null ],
+    [ "m_collisionManager", "class_tramposo_library_1_1_game.html#af271f902850f1e1c573f1885888d4b3a", null ],
+    [ "m_currentScene", "class_tramposo_library_1_1_game.html#a4e65a8bbf4a26c815473133bd750890e", null ],
+    [ "m_inputManager", "class_tramposo_library_1_1_game.html#a87208c39ce5e0bf4dd46a59ed44d70c8", null ],
+    [ "m_isRunning", "class_tramposo_library_1_1_game.html#a8772df25200b1d3e2160c146030182ed", null ],
+    [ "m_lastFrameTime", "class_tramposo_library_1_1_game.html#ad6c46f5e51b031fca0a86917efe7a3cb", null ],
+    [ "m_renderer", "class_tramposo_library_1_1_game.html#aa0a0b71c6b6357e9bc13355c67462326", null ],
+    [ "m_scenes", "class_tramposo_library_1_1_game.html#a7ea76aebef70f26bca0425c80a2bacc5", null ],
+    [ "m_window", "class_tramposo_library_1_1_game.html#a9adb3a648d704189aeb058da480a1f28", null ]
+];

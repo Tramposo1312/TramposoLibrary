@@ -1,0 +1,19 @@
+<map id="TramposoLibrary::AudioManager" name="TramposoLibrary::AudioManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="146,469,347,709"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="79,320,257,405"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,404,193,445,195,453,190,454,187,446,176,406"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="29,163,99,232"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,230,125,295,131,304,127,307,120,297,81,233"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,123,91"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="67,106,67,163,61,163,61,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="124,163,212,232"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="171,232,171,303,165,303,165,232"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="236,155,364,240"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="272,254,241,298,218,322,214,318,237,294,267,251"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="253,13,275,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="267,82,273,130,276,138,270,139,268,131,262,83"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="324,13,345,83"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="329,83,316,139,311,138,324,82"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="281,328,367,397"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="315,398,296,454,291,452,310,396"/>
+</map>

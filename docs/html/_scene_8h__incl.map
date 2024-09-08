@@ -1,0 +1,17 @@
+<map id="include/TramposoLibrary/Scene.h" name="include/TramposoLibrary/Scene.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="8,5,172,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,171,74,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,49,51,156,46,155,81,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="98,171,155,197"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="97,48,122,155,117,156,92,49"/>
+<area shape="rect" id="Node000004" href="$_sprite_8h.html" title=" " alt="" coords="128,96,295,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="123,46,181,85,178,89,120,51"/>
+<area shape="poly" id="edge6_Node000004_Node000002" title=" " alt="" coords="183,126,85,167,82,162,181,121"/>
+<area shape="poly" id="edge7_Node000004_Node000003" title=" " alt="" coords="198,125,154,163,150,159,195,121"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="178,171,237,197"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="213,123,212,155,206,155,208,123"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="261,171,314,197"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="227,121,265,158,262,162,223,125"/>
+<area shape="rect" id="Node000007" href="$_component_8h.html" title=" " alt="" coords="338,171,538,197"/>
+<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="252,121,385,163,383,168,250,126"/>
+</map>

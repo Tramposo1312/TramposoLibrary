@@ -1,0 +1,13 @@
+<map id="include/TramposoLibrary/Sprite.h" name="include/TramposoLibrary/Sprite.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="118,5,282,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,64,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,51,75,91,73,86,156,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="88,96,141,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,51,141,87,137,83,176,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="166,96,234,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="202,49,202,80,197,80,197,49"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="258,96,315,123"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="224,47,264,83,260,87,220,51"/>
+<area shape="rect" id="Node000006" href="$_component_8h.html" title=" " alt="" coords="340,96,540,123"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="262,46,388,88,386,93,261,51"/>
+</map>

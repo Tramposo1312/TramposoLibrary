@@ -1,0 +1,5 @@
+<map id="CatchGameScene" name="CatchGameScene">
+<area shape="rect" id="Node000001" title=" " alt="" coords="13,272,152,491"/>
+<area shape="rect" id="Node000002" href="$class_tramposo_library_1_1_scene.html" title="Represents a game scene or state." alt="" coords="5,5,160,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,239,85,272,80,272,80,239"/>
+</map>
