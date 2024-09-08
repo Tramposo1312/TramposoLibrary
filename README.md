@@ -1,6 +1,6 @@
 # TramposoLibrary
 
-TramposoLibrary is a C++ 2D game development library built on top of SDL2. It provides a set of classes and utilities to simplify game development.
+TramposoLibrary is a C++ game development library built on top of SDL2. It provides a set of classes and utilities to simplify 2D game development.
 
 ## Features
 
@@ -8,9 +8,10 @@ TramposoLibrary is a C++ 2D game development library built on top of SDL2. It pr
 - Scene-based game structure
 - Sprite rendering
 - Input handling
-- Audio management
+- Audio management (sound effects and music)
 - Collision detection
-- Basic physics components
+- Text rendering
+- Resource management
 
 ## Prerequisites
 
@@ -60,7 +61,7 @@ public:
     }
     
     void render() override {
-        // Render sprites
+        // Render sprites and UI
     }
 };
 
@@ -73,9 +74,37 @@ int main() {
 }
 ```
 
-## Documentation
+## Demo Game
 
-For detailed API documentation, please refer to the `docs` folder.
+The library includes a simple "Catch the Falling Objects" demo game (CatchGame). To run it:
+
+```
+cd build
+./Debug/CatchGame  # or ./Release/CatchGame depending on your build configuration
+```
+
+## Current State
+
+The library currently provides basic functionality for 2D game development, including:
+
+- Game loop and scene management
+- Sprite rendering
+- Input handling
+- Audio playback
+- Collision detection
+- Text rendering
+
+The CatchGame demo showcases these features in a simple gameplay scenario.
+
+## Future Plans
+
+- Implement a particle system for visual effects
+- Add support for sprite sheets and animations
+- Implement a UI system (buttons, menus, etc.)
+- Add support for tile maps
+- Implement a simple physics system
+- Add more advanced audio features (e.g., sound positioning, fading)
+- Improve documentation and add more code examples
 
 ## Contributing
 
