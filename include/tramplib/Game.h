@@ -75,6 +75,14 @@ namespace tramplib {
 
         bool isRunning() const;
 
+        /**
+     * @brief Gets the ConfigManager instance.
+     * @return Reference to the ConfigManager.
+     */
+        ConfigManager& getConfigManager() {
+            return m_configManager;
+        }
+
     private:
         SDL_Window* m_window;
         SDL_Renderer* m_renderer;
@@ -83,8 +91,9 @@ namespace tramplib {
         std::unique_ptr<InputManager> m_inputManager;
         std::unique_ptr<ResourceManager> m_resourceManager;
         std::unique_ptr<CollisionManager> m_collisionManager;
-        std::stack<std::unique_ptr<GameState>> m_states; ///< Stack of game states.
 
+        std::stack<std::unique_ptr<GameState>> m_states; ///< Stack of game states.
+        ConfigManager m_configManager; ///< Manages game configuration.
 
         std::unordered_map<std::string, std::unique_ptr<Scene>> m_scenes;
         Scene* m_currentScene;
