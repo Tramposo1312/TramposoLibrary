@@ -1,6 +1,10 @@
 # TramposoLibrary (tramplib)
 
+<<<<<<< HEAD
 TramposoLibrary ~`tramplib`~, is a C++ game development library built on top of SDL2. It provides a set of classes and utilities to simplify 2D game development.
+=======
+TramposoLibrary is a C++ game development library built on top of SDL2. It provides a set of classes and utilities to simplify 2D game development.
+>>>>>>> fc1fb137bc7927426537815c740cdd61df147c77
 
 ## Features
 
