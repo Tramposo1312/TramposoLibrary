@@ -1,12 +1,12 @@
-#include "TramposoLibrary/Game.h"
-#include "TramposoLibrary/InputManager.h"
-#include "TramposoLibrary/ResourceManager.h"
-#include "TramposoLibrary/CollisionManager.h"
+#include "tramplib/Game.h"
+#include "tramplib/InputManager.h"
+#include "tramplib/ResourceManager.h"
+#include "tramplib/CollisionManager.h"
 #include <stdexcept>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     Game::Game(const std::string& title, int width, int height)
         : m_window(nullptr), m_renderer(nullptr), m_isRunning(false), m_currentScene(nullptr), m_lastFrameTime(0) {
@@ -122,4 +122,4 @@ namespace TramposoLibrary {
         return m_isRunning;
     }
 
-} // namespace TramposoLibrary
+} // namespace tramplib

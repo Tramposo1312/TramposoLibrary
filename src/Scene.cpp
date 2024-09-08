@@ -1,7 +1,7 @@
-#include "TramposoLibrary/Scene.h"
-#include "TramposoLibrary/Game.h"
+#include "tramplib/Scene.h"
+#include "tramplib/Game.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     Scene::Scene(Game* game) : m_game(game) {}
 

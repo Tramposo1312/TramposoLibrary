@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(TramposoLibrary VERSION 0.1.0 LANGUAGES CXX)
+project(tramplib VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -22,16 +22,16 @@ set(SOURCES
 )
 
 # Add library
-add_library(TramposoLibrary ${SOURCES})
+add_library(tramplib ${SOURCES})
 
 # Set include directories for the library
-target_include_directories(TramposoLibrary PUBLIC
+target_include_directories(tramplib PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
 
 # Link libraries
-target_link_libraries(TramposoLibrary
+target_link_libraries(tramplib
     PUBLIC
     SDL2::SDL2 SDL2::SDL2main
     SDL2_image::SDL2_image
@@ -41,7 +41,7 @@ target_link_libraries(TramposoLibrary
 
 # Add demo game executable
 add_executable(CatchGame src/CatchGame.cpp)
-target_link_libraries(CatchGame PRIVATE TramposoLibrary)
+target_link_libraries(CatchGame PRIVATE tramplib)
 
 # Google Test
 include(FetchContent)
@@ -66,7 +66,7 @@ add_executable(tramposo_tests
 )
 target_link_libraries(tramposo_tests
     PRIVATE
-    TramposoLibrary
+    tramplib
     gtest_main
 )
 

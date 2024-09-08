@@ -5,7 +5,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     class CollisionManager {
     public:
@@ -19,6 +19,6 @@ namespace TramposoLibrary {
         std::unordered_map<std::string, SDL_Rect> m_colliders;
     };
 
-} // TramposoLibrary
+} 
 
-#endif // TRAMPOSO_COLLISION_MANAGER_H
+#endif 

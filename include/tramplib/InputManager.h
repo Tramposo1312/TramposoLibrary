@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include <vector>
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     class InputManager {
     public:

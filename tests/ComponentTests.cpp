@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
-#include "TramposoLibrary/Sprite.h"
-#include "TramposoLibrary/Component.h"
+#include "tramplib/Sprite.h"
+#include "tramplib/Component.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     class TestComponent : public Component {
     public:

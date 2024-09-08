@@ -1,7 +1,7 @@
-#include "TramposoLibrary/InputManager.h"
+#include "tramplib/InputManager.h"
 #include <algorithm>
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     InputManager::InputManager() : m_keyboardState(SDL_GetKeyboardState(nullptr)),
         m_previousKeyboardState(SDL_NUM_SCANCODES, 0),
@@ -51,4 +51,4 @@ namespace TramposoLibrary {
         y = m_mouseY;
     }
 
-} // namespace TramposoLibrary
+} // namespace tramplib

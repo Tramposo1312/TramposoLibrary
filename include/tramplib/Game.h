@@ -7,7 +7,7 @@
 #include <unordered_map>
 #include "Scene.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     class InputManager;
     class ResourceManager;
@@ -56,6 +56,6 @@ namespace TramposoLibrary {
         void render();
     };
 
-} // namespace TramposoLibrary
+} 
 
-#endif // TRAMPOSO_GAME_H
+#endif 

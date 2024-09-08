@@ -3,9 +3,9 @@
 
 #include <memory>
 #include <vector>
-#include "TramposoLibrary/Sprite.h"
+#include "tramplib/Sprite.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     class Game;
 
@@ -69,6 +69,6 @@ namespace TramposoLibrary {
         std::vector<std::shared_ptr<Sprite>> m_sprites;
     };
 
-} // namespace TramposoLibrary
+} // namespace tramplib
 
 #endif // TRAMPOSO_SCENE_H

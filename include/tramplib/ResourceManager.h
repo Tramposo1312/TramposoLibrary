@@ -6,7 +6,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     class ResourceManager {
     public:

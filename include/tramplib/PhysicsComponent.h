@@ -1,9 +1,9 @@
 #ifndef TRAMPOSO_PHYSICS_COMPONENT_H
 #define TRAMPOSO_PHYSICS_COMPONENT_H
 
-#include "TramposoLibrary/Component.h"
+#include "tramplib/Component.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     class Sprite;
 

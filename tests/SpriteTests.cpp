@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
-#include "TramposoLibrary/Sprite.h"
-#include "TramposoLibrary/PhysicsComponent.h"
+#include "tramplib/Sprite.h"
+#include "tramplib/PhysicsComponent.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     TEST(SpriteTests, Creation) {
         SDL_Renderer* renderer = SDL_CreateRenderer(SDL_CreateWindow("Test", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, 0), -1, 0);
@@ -41,4 +41,4 @@ namespace TramposoLibrary {
         SDL_DestroyRenderer(renderer);
     }
 
-} // namespace TramposoLibrary
+} // namespace tramplib

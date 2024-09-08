@@ -5,9 +5,9 @@
 #include <string>
 #include <memory>
 #include <vector>
-#include "TramposoLibrary/Component.h"
+#include "tramplib/Component.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     /**
  * @class Sprite
@@ -101,6 +101,6 @@ namespace TramposoLibrary {
         std::vector<std::unique_ptr<Component>> m_components;
     };
 
-} // namespace TramposoLibrary
+} // namespace tramplib
 
 #endif // TRAMPOSO_SPRITE_H

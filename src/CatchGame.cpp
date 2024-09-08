@@ -1,18 +1,18 @@
-#include "TramposoLibrary/Game.h"
-#include "TramposoLibrary/Sprite.h"
-#include "TramposoLibrary/Scene.h"
-#include "TramposoLibrary/InputManager.h"
-#include "TramposoLibrary/ResourceManager.h"
-#include "TramposoLibrary/CollisionManager.h"
+#include "tramplib/Game.h"
+#include "tramplib/Sprite.h"
+#include "tramplib/Scene.h"
+#include "tramplib/InputManager.h"
+#include "tramplib/ResourceManager.h"
+#include "tramplib/CollisionManager.h"
 #include <random>
 #include <memory>
 #include <string>
 #include <fstream>
 #include <iostream>
 
-class CatchGameScene : public TramposoLibrary::Scene {
+class CatchGameScene : public tramplib::Scene {
 public:
-    CatchGameScene(TramposoLibrary::Game* game) : Scene(game), m_score(0), m_scoreTexture(nullptr) {}
+    CatchGameScene(tramplib::Game* game) : Scene(game), m_score(0), m_scoreTexture(nullptr) {}
 
     ~CatchGameScene() {
         if (m_scoreTexture) {
@@ -21,8 +21,8 @@ public:
     }
 
     void load() override {
-        m_player = std::make_shared<TramposoLibrary::Sprite>(m_game->getRenderer(), "../assets/player.png", 400, 550);
-        m_fallingObject = std::make_shared<TramposoLibrary::Sprite>(m_game->getRenderer(), "../assets/object.png", 400, 0);
+        m_player = std::make_shared<tramplib::Sprite>(m_game->getRenderer(), "../assets/player.png", 400, 550);
+        m_fallingObject = std::make_shared<tramplib::Sprite>(m_game->getRenderer(), "../assets/object.png", 400, 0);
         addSprite(m_player);
         addSprite(m_fallingObject);
 
@@ -59,8 +59,8 @@ public:
     }
 
 private:
-    std::shared_ptr<TramposoLibrary::Sprite> m_player;
-    std::shared_ptr<TramposoLibrary::Sprite> m_fallingObject;
+    std::shared_ptr<tramplib::Sprite> m_player;
+    std::shared_ptr<tramplib::Sprite> m_fallingObject;
     int m_score;
     SDL_Texture* m_scoreTexture;
 
@@ -128,7 +128,7 @@ private:
 
 int main(int argc, char* argv[]) {
     try {
-        TramposoLibrary::Game game("Catch Game", 800, 600);
+        tramplib::Game game("Catch Game", 800, 600);
         game.addScene("catch_game", std::make_unique<CatchGameScene>(&game));
         game.setCurrentScene("catch_game");
         game.run();

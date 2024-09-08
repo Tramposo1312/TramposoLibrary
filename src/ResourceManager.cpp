@@ -1,7 +1,7 @@
-#include "TramposoLibrary/ResourceManager.h"
+#include "tramplib/ResourceManager.h"
 #include <stdexcept>
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     ResourceManager::ResourceManager() : m_music(nullptr) {
         if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {

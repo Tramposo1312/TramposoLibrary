@@ -1,7 +1,7 @@
-#include "TramposoLibrary/PhysicsComponent.h"
-#include "TramposoLibrary/Sprite.h"
+#include "tramplib/PhysicsComponent.h"
+#include "tramplib/Sprite.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     PhysicsComponent::PhysicsComponent(Sprite* owner) : Component(owner) {}
 
@@ -15,4 +15,4 @@ namespace TramposoLibrary {
         m_owner->setPosition(rect.x, rect.y);
     }
 
-} // namespace TramposoLibrary
+} // namespace tramplib

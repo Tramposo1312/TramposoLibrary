@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
-#include "TramposoLibrary/Scene.h"
-#include "TramposoLibrary/Game.h"
-#include "TramposoLibrary/Sprite.h"
+#include "tramplib/Scene.h"
+#include "tramplib/Game.h"
+#include "tramplib/Sprite.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     class TestScene : public Scene {
     public:

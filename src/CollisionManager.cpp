@@ -1,6 +1,6 @@
-#include "TramposoLibrary/CollisionManager.h"
+#include "tramplib/CollisionManager.h"
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     void CollisionManager::addCollider(const std::string& name, const SDL_Rect& rect) {
         m_colliders[name] = rect;
@@ -43,4 +43,4 @@ namespace TramposoLibrary {
         }
     }
 
-} // TramposoLibrary
+} // tramplib

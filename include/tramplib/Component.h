@@ -1,7 +1,7 @@
 #ifndef TRAMPOSO_COMPONENT_H
 #define TRAMPOSO_COMPONENT_H
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     class Sprite;
 
@@ -17,6 +17,6 @@ namespace TramposoLibrary {
         Sprite* m_owner;
     };
 
-} // TramposoLibrary
+} // tramplib
 
 #endif // TRAMPOSO_COMPONENT_H

@@ -1,8 +1,8 @@
-#include "TramposoLibrary/Sprite.h"
+#include "tramplib/Sprite.h"
 #include <SDL_image.h>
 #include <stdexcept>
 
-namespace TramposoLibrary {
+namespace tramplib {
 
     Sprite::Sprite(SDL_Renderer* renderer, const std::string& imagePath, int x, int y)
         : m_renderer(renderer), m_texture(nullptr) {
@@ -47,4 +47,4 @@ namespace TramposoLibrary {
         m_rect.y = y;
     }
 
-} // TramposoLibrary
+} // tramplib
