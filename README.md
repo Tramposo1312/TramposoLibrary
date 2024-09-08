@@ -1,6 +1,6 @@
 # TramposoLibrary (tramplib)
 
-TramposoLibrary `tramplib`, is a C++ game development library built on top of SDL2. It provides a set of classes and utilities to simplify 2D game development.
+TramposoLibrary, using the namespace `tramplib`, is a C++ game development library built on top of SDL2. It provides a set of classes and utilities to simplify 2D game development.
 
 ## Features
 
@@ -12,6 +12,8 @@ TramposoLibrary `tramplib`, is a C++ game development library built on top of SD
 - Collision detection
 - Text rendering
 - Resource management
+- State Management System
+- Configuration File Support
 
 ## Prerequisites
 
@@ -42,74 +44,75 @@ TramposoLibrary `tramplib`, is a C++ game development library built on top of SD
 
 ## Usage
 
-Here's a basic example of how to use TramposoLibrary with the new `tramplib` namespace:
+Here's a basic example of how to use `tramplib` namespace and the State Management System:
 
 ```cpp
 #include <tramplib/Game.h>
-#include <tramplib/Scene.h>
+#include <tramplib/GameState.h>
 
-class MyScene : public tramplib::Scene {
+class MenuState : public tramplib::GameState {
 public:
-    MyScene(tramplib::Game* game) : Scene(game) {}
+    MenuState(tramplib::Game* game) : GameState(game) {}
     
-    void load() override {
-        // Load resources, create sprites, etc.
+    void enter() override {
+        // Initialize menu
     }
     
     void update(float deltaTime) override {
-        // Update game logic
+        // Update menu logic
     }
     
     void render() override {
-        // Render sprites and UI
+        // Render menu
     }
+
+    void exit() override {
+        // Clean up menu resources
+    }
+};
+
+class PlayState : public tramplib::GameState {
+    // Similar implementation to MenuState
 };
 
 int main() {
     tramplib::Game game("My Game", 800, 600);
-    game.addScene("myScene", std::make_unique<MyScene>(&game));
-    game.setCurrentScene("myScene");
+    
+    // Load configuration
+    game.getConfigManager().loadConfig("game_config.ini");
+    
+    // Push initial state
+    game.pushState(std::make_unique<MenuState>(&game));
+    
     game.run();
     return 0;
 }
 ```
 
-## Demo Game
+## Configuration File
 
-The library includes a simple "Catch the Falling Objects" demo game (CatchGame). To run it:
+You can create a configuration file (e.g., `game_config.ini`) with key-value pairs:
 
+```ini
+window_width=800
+window_height=600
+fullscreen=false
 ```
-cd build
-./Debug/CatchGame  # or ./Release/CatchGame depending on your build configuration
+
+Access configuration values in your code:
+
+```cpp
+int width = std::stoi(game.getConfigManager().getValue("window_width", "800"));
 ```
 
-## Current State
+## State Management
 
-The library currently provides basic functionality for 2D game development, including:
+The State Management System allows you to organize your game into different states (e.g., Menu, Playing, Paused) and easily switch between them:
 
-- Game loop and scene management
-- Sprite rendering
-- Input handling
-- Audio playback
-- Collision detection
-- Text rendering
-
-The CatchGame demo showcases these features in a simple gameplay scenario.
-
-## Future Plans
-
-- Implement a particle system for visual effects
-- Add support for sprite sheets and animations
-- Implement a UI system (buttons, menus, etc.)
-- Add support for tile maps
-- Implement a simple physics system
-- Add more advanced audio features (e.g., sound positioning, fading)
-- Improve documentation and add more code examples
+- `pushState`: Add a new state on top of the current one
+- `popState`: Remove the current state and return to the previous one
+- `changeState`: Replace the current state with a new one
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
