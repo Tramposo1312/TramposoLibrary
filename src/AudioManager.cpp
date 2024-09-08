@@ -39,8 +39,19 @@ namespace TramposoLibrary {
             Mix_FreeMusic(m_music);
         }
         m_music = Mix_LoadMUS(filename.c_str());
+<<<<<<< HEAD
+        int numDecoders = Mix_GetNumMusicDecoders();
+        
+
+        if (!m_music) {
+           /*for (int i = 0; i < numDecoders; ++i) {
+                std::string("Supported music decoder: " + std::string(Mix_GetMusicDecoder(i)));
+            }
+            throw std::runtime_error("Failed to load music! SDL_mixer Error: " + std::string(Mix_GetError()));*/
+=======
         if (!m_music) {
             throw std::runtime_error("Failed to load music! SDL_mixer Error: " + std::string(Mix_GetError()));
+>>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
         }
     }
 

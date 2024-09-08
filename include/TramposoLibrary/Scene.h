@@ -17,7 +17,11 @@ namespace TramposoLibrary {
         virtual void load() = 0;
         virtual void unload() = 0;
         virtual void update(float deltaTime) = 0;
+<<<<<<< HEAD
+        virtual void render();  // Changed from pure virtual to virtual with implementation
+=======
         virtual void render() = 0;
+>>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
 
         void addSprite(std::shared_ptr<Sprite> sprite);
 

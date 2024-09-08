@@ -39,11 +39,23 @@ target_link_libraries(TramposoLibrary
     SDL2_mixer::SDL2_mixer
 )
 
+<<<<<<< HEAD
+# Add demo game executable
+add_executable(CatchGame src/CatchGame.cpp)
+target_link_libraries(CatchGame PRIVATE TramposoLibrary)
+
+=======
+>>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
 # Google Test
 include(FetchContent)
 FetchContent_Declare(
   googletest
+<<<<<<< HEAD
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG release-1.11.0
+=======
   URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+>>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
 )
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
@@ -52,16 +64,26 @@ FetchContent_MakeAvailable(googletest)
 # Enable testing
 enable_testing()
 
+<<<<<<< HEAD
+# Add test executable
+add_executable(tramposo_tests 
+=======
 # Specify test source files
 set(TEST_SOURCES
+>>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
     tests/GameTests.cpp
     tests/SpriteTests.cpp
     tests/SceneTests.cpp
     tests/ComponentTests.cpp
+<<<<<<< HEAD
+
+)
+=======
 )
 
 # Add test executable
 add_executable(tramposo_tests ${TEST_SOURCES})
+>>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
 target_link_libraries(tramposo_tests
     PRIVATE
     TramposoLibrary
@@ -69,7 +91,11 @@ target_link_libraries(tramposo_tests
 )
 
 # Add the test
+<<<<<<< HEAD
+add_test(NAME TramposoTests COMMAND tramposo_tests)
+=======
 add_test(NAME TramposoTests COMMAND tramposo_tests)
 
 # Set CMP0135 to NEW to avoid the warning
 cmake_policy(SET CMP0135 NEW)
+>>>>>>> ff39892716f02024ee20b509f89751aa88d65f92
